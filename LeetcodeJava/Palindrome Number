@@ -1,0 +1,21 @@
+
+//Determine whether an integer is a palindrome. Do this without extra space.
+
+
+
+*****************************************************
+class Solution {
+    public boolean isPalindrome(int x) {
+        int reverse  = 0;
+        int parameter = x;
+        
+        while(parameter>0){
+            reverse = reverse * 10 + parameter % 10;
+            parameter = parameter / 10;
+        }
+        if(reverse == x){
+            return true;
+        }
+        return false;
+    }
+}
