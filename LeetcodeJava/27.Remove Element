@@ -1,0 +1,26 @@
+/*Given an array and a value, remove all instances of that value in-place and return the new length.
+
+Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
+
+The order of elements can be changed. It doesn't matter what you leave beyond the new length.*/
+
+
+**************************************************
+class Solution {
+//     类似于上一题的remove duplicate ， 依然用双指针
+    public int removeElement(int[] nums, int val) {
+        
+        int cleaner = 0;
+        
+        if(nums.length==0){
+            return 0;
+        }
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]!=val){
+                nums[cleaner++]=nums[i];
+            }
+        }
+        
+        return cleaner;
+    }
+}
