@@ -1,0 +1,37 @@
+// Related to question Excel Sheet Column Title
+
+// Given a column title as appear in an Excel sheet, return its corresponding column number.
+
+// For example:
+
+//     A -> 1
+//     B -> 2
+//     C -> 3
+//     ...
+//     Z -> 26
+//     AA -> 27
+//     AB -> 28 
+
+class Solution {
+    public int titleToNumber(String s) {
+        
+        int len = s.length();
+        int sum = 0;
+        int count=1;
+        char c;
+        if(len<1){
+            return -1;
+        }
+        
+        for(int i =len-1;i>=0;i--){ 
+            c=s.charAt(i);
+            System.out.println(c);
+            sum = sum + (c-64) *count;
+            count=count*26;
+            
+        }
+        
+        return sum;
+        
+    }
+}
