@@ -1,0 +1,26 @@
+/*basically, we module 26 to get the last letter +65 to convert it to letter.
+for example 18278 ZZZ , minus 1 module 26 equal 25,  convert it to letter plus 65 equal Z.
+Given a positive integer, return its corresponding column title as appear in an Excel sheet.
+
+For example:
+
+    1 -> A
+    2 -> B
+    3 -> C
+    ...
+    26 -> Z
+    27 -> AA
+    28 -> AB 
+*/
+
+public class Solution {
+public String convertToTitle(int n) {
+    String res = "";
+    while(n != 0) {
+        char ch = (char)((n - 1) % 26 + 65);
+        n = (n - 1) / 26;
+        res = ch + res;
+    }
+    return res;
+}
+}
